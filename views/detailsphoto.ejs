@@ -1,0 +1,36 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+
+<div class="d-flex w-100 mt-5 px-5">
+
+    <img style="height:400px; object-fit: cover; object-position: center"
+    class="w-20"
+    src="/images/<%=photo.clip%>"
+    alt=""/>
+
+
+    <div class="w-50 px-5" class="rounded container mt-5 p-5">
+    <h3> photo information</h3>
+    <br>
+
+    <h4> Photographer name <br>
+        <%=photo.name%>
+     </h4>
+     <br>
+
+     <h5>ISBN number <br>
+        <%=photo.isbn%></h5>
+        <br>
+
+    <h6 class="text-primary"> price <br><%=photo.price%></h6>
+
+    <a href="/update-photo/<%=photo._id%>" class="btn btn-success">Update</a>
+    <a href="/delete/<%=photo._id%>" class="btn btn-danger">delete</a>
+
+    </div>
+
+
+</div>
+
+
+<%- include("partials/footer") %>

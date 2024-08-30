@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+
+<h1 class="fw-semibold">Register your own photo</h1>
+
+<div class="text-success">
+    <hr>
+  </div>
+  
+
+  <form class="px-4 fs-1 cantainer" action="/create-photo" method="post" enctype="multipart/form-data">
+    <input type="file" class="form-control mb-3 w-25 py-2" placeholder="photo clip" name="clip"> 
+    <input type="text" class="form-control mb-3 w-25 py-2" placeholder="Photographer" name="name" >
+    <input type="text" class="form-control mb-3 w-25 py-2" placeholder="ISBN number" name="isbn">
+    <input class="form-control mb-3 w-25 py-2" type="number" placeholder="photo price" name="price">
+    <textarea name="description" rows="5" class="w-50 form-control mb-3 py-2"
+    placeholder="enter description here...."></textarea>
+    <button class="btn btn-primary" type="submit">Add to Album</button>
+
+  </form>
+  
+
+
+
+
+<%- include("partials/footer") %>

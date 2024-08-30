@@ -1,0 +1,25 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+
+<div class="d-flex w-100 mt-5 px-5">
+
+    <img style="height:400px; object-fit: cover; object-position: center"
+    class="w-20"
+    src="/images/<%=photo.clip%>"
+    alt=""/>
+ 
+    <form class="w-50 px-5" class="rounded p-5 mt-5 container" action="/update-photo/<%=photo._id%>" method="post"  enctype="multipart/form-data">
+    <input type="file" class="form-control mb-3 w-25 py-2" placeholder="photo clip" name="clip" value="<%=photo.clip%>"> 
+    <input type="text" class="form-control mb-3 w-25 py-2" placeholder="Photographer" name="name" value="<%=photo.name%>">
+    <input type="text" class="form-control mb-3 w-25 py-2" placeholder="ISBN number" name="isbn"value="<%=photo.isbn%>">
+    <input class="form-control mb-3 w-25 py-2" type="number" placeholder="photo price" name="price" value="<%=photo.price%> ">
+    <textarea  name="description" rows="5" class="w-100 form-control mb-3 py-2"
+            placeholder="enter description here...." value="<%=photo.description%>"></textarea>
+         <button class="btn btn-primary" type="submit">update Book</button>
+</form>
+
+
+</div>
+
+
+<%- include("partials/footer") %>

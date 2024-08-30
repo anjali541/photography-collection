@@ -1,0 +1,35 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end ">
+    <a  href="/create-photo"class="btn btn-outline-danger" method="post">create your own album </a>
+  </div>
+
+  <h1 class="fst-italic">Photographer Collection here.</h1>
+  <hr class="border border-danger border-2 opacity-50">
+  <div class="cards d-flex flex-wrap">
+    <%photos.forEach((photo)=> {
+
+    %>
+
+
+  <div class="card" style="width: 18rem;">
+    <img src="/images/<%=photo.clip%>" style="height: 25vh;object-fit: cover;object-position: center;"
+          class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%=photo.name%></h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%=photo.isbn%></li>
+      <p class="card-text"><%=photo.description%></p>
+    </ul>
+    <div class="card-body">
+        <a href="/details/<%=photo._id%>" type="button" class="btn btn-success" method="post">More Details</a>
+    </div>
+  </div>
+  <% }) %>
+  </div>
+
+
+
+<%- include("partials/footer") %>
